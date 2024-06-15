@@ -9,6 +9,7 @@ const dotenv = require("dotenv");
 const { addQuery } = require("./controllers/forum");
 const { login, register } = require("./controllers/auth");
 const { leaderboard } = require("./controllers/leaderboard");
+const updatePoints = require("./controllers/updatePoints");
 
 // Setting up port number
 const PORT = process.env.PORT || 4000;
@@ -42,6 +43,7 @@ cloudinaryConnect();
 app.post("/login", login);
 app.post("/register", register);
 app.get("/leaderboard", leaderboard);
+app.put("/updatePoints", updatePoints);
 
 //def route
 app.get("/", (req, res) => {
