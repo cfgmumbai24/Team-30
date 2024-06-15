@@ -16,7 +16,7 @@ const Header = ({ coins }) => {
         <div className='nav'>Calculators <KeyboardArrowDownIcon/> </div>
         <div className='nav'>Discover <KeyboardArrowDownIcon/> </div>
         <Link to={'/about'} className='nav'>About Us</Link>
-        <Link to={'/discusssionforum'} className='nav'>LEADERBOARD</Link>
+        <Link to={'/leaderboard'} className='nav'>LEADERBOARD</Link>
         <div className='icons'>
             <WhatsAppIcon className='icon'/>
             <GTranslateIcon className='icon'/>

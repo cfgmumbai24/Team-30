@@ -1,5 +1,4 @@
 import React from 'react'
-// import Chatbot from '../components/Chatbot'
 import useScript from '../components/useScript';
 import homepic from '../assets/home.png';
 import '../styles/home.scss'
