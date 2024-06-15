@@ -11,6 +11,6 @@ exports.leaderboard = async (req, res) => {
   ]);
 
   return res.status(200).json({
-    data: ranking[0],
+    data: ranking,
   });
 };
