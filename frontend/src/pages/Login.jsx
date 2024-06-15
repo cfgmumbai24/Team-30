@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import LoginInput from '../components/LoginInput';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [values,setValues]=useState(
@@ -42,6 +43,7 @@ const Login = () => {
             <LoginInput key={input.id} {...input} value={values[input.name]} onChange={onChange}/>
           ))}
           <button>Submit</button>
+          <span>Don't have an account?<Link to={'/signup'}>Sign Up</Link></span>
           </form>
         </div>
       );

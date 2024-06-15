@@ -25,6 +25,9 @@ body{
         color: black;
         display: flex;
         align-items: center;
+        &:hover{
+            color: blue;
+        }
     }
     .icons{
         display: flex;
