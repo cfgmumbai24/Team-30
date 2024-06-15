@@ -1,5 +1,4 @@
 import React from 'react'
-// import Chatbot from '../components/Chatbot'
 import useScript from '../components/useScript';
 
 const Home = () => {
@@ -15,7 +14,7 @@ const Home = () => {
       return (
         <>
           <div>home</div>
-          {loaded && <div>Chatbot is ready</div>}
+          {/* {loaded && <div>Chatbot is ready</div>} */}
         </>
       );
 }
