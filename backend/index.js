@@ -5,10 +5,10 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const {cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
-
-
 const dotenv = require("dotenv");
 const { addQuery } = require("./controllers/forum");
+const { login, register } = require("./controllers/auth");
+const { leaderboard } = require("./controllers/leaderboard");
 
 // Setting up port number
 const PORT = process.env.PORT || 4000;
@@ -37,8 +37,11 @@ app.use(
 //cloudinary connection
 cloudinaryConnect();
 
-app.use("/addQuery", addQuery);
+// app.use("/addQuery", addQuery);
 
+app.post("/login", login);
+app.post("/register", register);
+app.get("/leaderboard", leaderboard);
 
 //def route
 app.get("/", (req, res) => {
@@ -51,8 +54,3 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
 	console.log(`App is running at ${PORT}`)
 })
-
-
-
-// node-schedule
-// crypto-random-string

@@ -1,5 +1,5 @@
-const User = require("../models/user");
-const Forum = require("../models/forum");
+const User = require("../models/user.js");
+const Forum = require("../models/forum.js");
 
 exports.addQuery = async (req, res) => {
   const { userid, query } = req.body;
@@ -80,5 +80,5 @@ exports.getReplies = async (req, res) => {
 };
 
 exports.getUserQueries = async (req,res) =>{ 
-  
+
 }
