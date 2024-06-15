@@ -7,6 +7,8 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Leaderboard from './pages/Leaderboard';
+import { useState } from 'react';
+import Modules from './pages/Modules';
 
 function App() {
   const [coins, setCoins] = useState(50); // Assuming the user starts with 50 coins
@@ -22,6 +24,7 @@ function App() {
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/leaderboard' element={<Leaderboard/>}/>
+        <Route path='/modules' element={<Modules/>}/>
       </Routes>
     </Router>
   );

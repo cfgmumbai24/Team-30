@@ -3,8 +3,11 @@ import LoginInput from '../components/LoginInput';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { apiConnector } from '../services/apiConnector';
+import { useDispatch } from 'react-redux';
+import { setToken } from '../slices/auth';
 
 const Login = () => {
+  const dispatch = useDispatch();
     const [values,setValues]=useState(
         {
           phoneno:"",
@@ -46,6 +49,10 @@ const Login = () => {
       if (!response.data.success) {
         throw new Error(response.data.message);
       }
+      
+    
+      dispatch(setToken(response.data.token))
+      console.log(response.data.token)
 
       toast.success("Login Successfully")
     } catch (error) {

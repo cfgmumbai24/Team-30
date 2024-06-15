@@ -5,6 +5,7 @@ import Progress from '../components/Progress';
 import Congratulations from '../components/Congratulations';
 import { apiConnector } from '../services/apiConnector';
 import toast from 'react-hot-toast';
+import { useSelector } from 'react-redux';
 
 const chapters = [
   { title: 'Chapter 1', text: 'This is the content of Chapter 1.' },
@@ -17,33 +18,42 @@ const Modules = ({ coins, addCoins }) => {
     const [currentChapter, setCurrentChapter] = useState(0);
     const moduleTitle = "Module 1";
 
+    const token = useSelector( ( state) => state.auth.token)
+
+    console.log("TOKEN IS :" + token)
+
   useEffect(() => {
     // Award coins when the module is completed
     if (currentChapter === chapters.length) {
-      addCoins(10);
 
       const sendModuleComplete = async(req,res)=>{
         const data = {
             flag : true,
             moduleName: moduleTitle,
+            token
         }
 
+        console.log(data)
         const toastId = toast.loading("Loadinng ...");
         try {
-            const addModule = await apiConnector("GET", "http://localhost:4000/updatePoints",data)
 
+          console.log("I AM HERE")
+            const addModule = await apiConnector("POST", "http://localhost:4000/updatePoints", data)
+            console.log("I AM HERE AFTER CALL")
+            console.log(addModule)
             if(!addModule.data.success){
-                throw new Error(response.data.message);
+                throw new Error(addModule.data.message);
             }
 
             toast.success("Module Added to Completion Successfully");
           } catch (error) {
             console.log("Error in adding module completion")
+            console.log(error);
             toast.error("Could Not Send Data");
           }
         toast.dismiss(toastId);
       }
-
+      sendModuleComplete();
       
     }
   }, [currentChapter]);

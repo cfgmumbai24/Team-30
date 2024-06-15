@@ -43,7 +43,7 @@ cloudinaryConnect();
 app.post("/login", login);
 app.post("/register", register);
 app.get("/leaderboard", leaderboard);
-app.put("/updatePoints", updatePoints);
+app.post("/updatePoints", updatePoints);
 
 //def route
 app.get("/", (req, res) => {
