@@ -1,0 +1,24 @@
+$header-height:150px;
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #FFFAEA;
+    font-family: 'Open Sans';
+    img{
+        flex: 1;
+        height: calc(100vh - #{$header-height});
+        padding-left: 100px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    div{
+        flex:3;
+        h2{
+            font-size: 50px;
+        }
+        p{
+            font-size: 25px;
+        }
+    }
+}

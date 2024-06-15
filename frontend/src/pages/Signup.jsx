@@ -57,6 +57,7 @@ const Signup = () => {
     
       const handleSubmit=(e)=>{
         e.preventDefault();
+        
       };
     
       const onChange=(e)=>{
@@ -70,7 +71,7 @@ const Signup = () => {
             <LoginInput key={input.id} {...input} value={values[input.name]} onChange={onChange}/>
           ))}
           <button>Submit</button>
-          <span>Don't have an account?<Link to={'/login'}>Log In</Link></span>
+          <span>Already have an account?<Link to={'/login'}>Log In</Link></span>
           </form>
         </div>
       );
