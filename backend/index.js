@@ -8,6 +8,7 @@ const fileUpload = require("express-fileupload");
 
 
 const dotenv = require("dotenv");
+const { addQuery } = require("./controllers/forum");
 
 // Setting up port number
 const PORT = process.env.PORT || 4000;
@@ -36,9 +37,10 @@ app.use(
 //cloudinary connection
 cloudinaryConnect();
 
+app.use("/addQuery", addQuery);
+
 
 //def route
-
 app.get("/", (req, res) => {
 	return res.json({
 		success:true,

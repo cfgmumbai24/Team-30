@@ -5,6 +5,9 @@ const forumSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
+  // tags: [{
+  //   type : String,
+  // }],
 
   replies: [
     {
