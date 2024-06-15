@@ -2,12 +2,11 @@ import React from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import GTranslateIcon from '@mui/icons-material/GTranslate';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import '../styles/header.scss';
 
-const Header = () => {
+const Header = ({ coins }) => {
     const navigate=useNavigate();
   return (
     
@@ -25,7 +24,7 @@ const Header = () => {
         </div>
         <div className='coins'>
             <MonetizationOnIcon/>
-            <p>0</p>
+            <p>{coins}</p>
         </div>
         <button onClick={()=>navigate('/signup')}>Sign Up</button>
         <button onClick={()=>navigate('/login')}>Log In</button>
