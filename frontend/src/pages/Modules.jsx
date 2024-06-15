@@ -3,6 +3,8 @@ import Chapter from '../components/Chapter';
 import Navigation from '../components/Navigation';
 import Progress from '../components/Progress';
 import Congratulations from '../components/Congratulations';
+import { apiConnector } from '../services/apiConnector';
+import toast from 'react-hot-toast';
 
 const chapters = [
   { title: 'Chapter 1', text: 'This is the content of Chapter 1.' },
@@ -25,13 +27,24 @@ const Modules = ({ coins, addCoins }) => {
             flag : true,
             moduleName: moduleTitle,
         }
+
+        const toastId = toast.loading("Loadinng ...");
+        try {
+            const addModule = await apiConnector("GET", "http://localhost:4000/updatePoints",data)
+
+            if(!addModule.data.success){
+                throw new Error(response.data.message);
+            }
+
+            toast.success("Module Added to Completion Successfully");
+          } catch (error) {
+            console.log("Error in adding module completion")
+            toast.error("Could Not Send Data");
+          }
+        toast.dismiss(toastId);
       }
 
-      try {
-        const addModule = await apiC
-      } catch (error) {
-        
-      }
+      
     }
   }, [currentChapter]);
 
