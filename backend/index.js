@@ -10,7 +10,7 @@ const { addQuery } = require("./controllers/forum");
 const { login, register } = require("./controllers/auth");
 const { leaderboard } = require("./controllers/leaderboard");
 const updatePoints = require("./controllers/updatePoints");
-
+const {getUserPoints}=require("./controllers/getUserPoints.js")
 // Setting up port number
 const PORT = process.env.PORT || 4000;
 
@@ -43,6 +43,7 @@ cloudinaryConnect();
 app.post("/login", login);
 app.post("/register", register);
 app.get("/leaderboard", leaderboard);
+app.get('/getUserpoints', getUserPoints);
 app.post("/updatePoints", updatePoints);
 
 //def route
