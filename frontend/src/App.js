@@ -10,32 +10,11 @@ import Modules from './pages/Modules';
 import { apiConnector } from './services/apiConnector'; // Assuming you have an API connector service
 
 function App() {
-  const [points, setPoints] = useState(null); // State to hold user points
-
-  useEffect(() => {
-    const fetchUserPoints = async () => {
-      try {
-        // Fetch user points from backend
-        const response = await apiConnector.get('/user/points'); // Adjust endpoint as needed
-
-        if (response.data.success) {
-          setPoints(response.data.points); // Update points state with fetched points
-        } else {
-          console.error('Failed to fetch user points:', response.data.message);
-        }
-      } catch (error) {
-        console.error('Failed to fetch user points:', error.message);
-      }
-    };
-
-    fetchUserPoints(); // Call fetchUserPoints directly inside useEffect
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Empty dependency array ensures this effect runs only once on component mount
+  const [coins, addCoins] = useState(0); // State to hold user points
 
   return (
     <Router>
-      <Header points={points} /> {/* Pass points to Header */}
+      <Header coins={coins} /> {/* Pass points to Header */}
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/signup' element={<Signup/>}/>
