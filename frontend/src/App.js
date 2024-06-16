@@ -16,7 +16,7 @@ function App() {
     const fetchUserPoints = async () => {
       try {
         // Fetch user points from backend
-        const response = await apiConnector.get('/user/points'); // Adjust endpoint as needed
+        const response = await apiConnector.get('http://127.0.0.1:4000/getuserpoints'); // Adjust endpoint as needed
 
         if (response.data.success) {
           setPoints(response.data.points); // Update points state with fetched points
