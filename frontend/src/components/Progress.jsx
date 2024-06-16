@@ -1,5 +1,6 @@
 // src/components/Progress.js
 import React from 'react';
+import '../styles/modules.scss';
 
 const Progress = ({ currentChapter, totalChapters }) => {
   console.log('Progress - Current Chapter:', currentChapter);
