@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quora and YouTube Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Search Quora and YouTube</h1>
+    <form method="post">
+        <input type="text" name="query" placeholder="Enter your query" value="{{ query }}">
+        <input type="submit" value="Search">
+    </form>
+    <h2>Quora Results</h2>
+    <ul>
+    {% for result in results %}
+        <li>
+            <a href="{{ result.link }}">{{ result.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <h2>YouTube Results</h2>
+    <ul>
+    {% for video in videos %}
+        <li>
+            <a href="{{ video.link }}" target="_blank">{{ video.title }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "ZqhaTVIgD1u00gqning93",
+            domain: "www.chatbase.co",
+            initialMessage: "{{ query }}"
+        };
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="ZqhaTVIgD1u00gqning93"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html>
