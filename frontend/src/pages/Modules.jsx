@@ -6,11 +6,12 @@ import Congratulations from '../components/Congratulations';
 import { apiConnector } from '../services/apiConnector';
 import toast from 'react-hot-toast';
 import { useSelector } from 'react-redux';
+import '../styles/modules.scss';
 
 const chapters = [
-  { title: 'Chapter 1', text: 'This is the content of Chapter 1.' },
-  { title: 'Chapter 2', text: 'This is the content of Chapter 2.' },
-  { title: 'Chapter 3', text: 'This is the content of Chapter 3.' },
+  { title: 'Chapter 1', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit' },
+  { title: 'Chapter 2', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit' },
+  { title: 'Chapter 3', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit' },
   // Add more chapters as needed
 ];
 
@@ -25,6 +26,7 @@ const Modules = ({ coins, addCoins }) => {
   useEffect(() => {
     // Award coins when the module is completed
     if (currentChapter === chapters.length) {
+        addCoins(10);
 
       const sendModuleComplete = async(req,res)=>{
         const data = {
@@ -79,11 +81,11 @@ const Modules = ({ coins, addCoins }) => {
     };
   
     return (
-      <div>
+      <div className='modules'>
         <h1>{moduleTitle}</h1>
         <Progress currentChapter={currentChapter} totalChapters={chapters.length} />
         {currentChapter < chapters.length ? (
-          <>
+          <div className='chapter'>
             <Chapter content={chapters[currentChapter]} />
             <Navigation
               currentChapter={currentChapter}
@@ -91,7 +93,7 @@ const Modules = ({ coins, addCoins }) => {
               onNext={handleNext}
               onPrevious={handlePrevious}
             />
-          </>
+          </div>
         ) : (
           <Congratulations />
         )}

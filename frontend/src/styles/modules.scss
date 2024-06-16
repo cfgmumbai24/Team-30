@@ -1,0 +1,179 @@
+/* src/pages/Modules.scss */
+
+/* src/pages/Modules.scss */
+
+$primary-color: #9933CC;
+$secondary-color: #6c757d;
+$secondary-color-2: #28a745;
+$background-color: #f9f9f9;
+$card-background: #FFFAEA;;
+$card-hover-background: #f0f8ff;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$font-color: #333;
+
+.module {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: $background-color;
+  min-height: 100vh;
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: $font-color;
+    text-align: center;
+  }
+
+  .module-card {
+    background: $card-background;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px $shadow-color;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 600px;
+    height: 200px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $card-hover-background;
+      transform: translateY(-5px);
+    }
+
+    h3 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: $primary-color;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: $secondary-color;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+  
+  .progress-bar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .navigation-buttons button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .navigation-buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .congratulations {
+    text-align: center;
+    font-size: 1.5em;
+    color: #28a745;
+  }
+
+  /* src/pages/Modules.scss */
+
+
+
+.modules {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: $background-color;
+  min-height: 100vh;
+  .chapter{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    width: 500px;
+    height: 300px;
+    background-color: $card-background;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: $font-color;
+    text-align: center;
+  }
+  }
+
+    .chapter-content {
+      margin-bottom: 20px;
+      h3 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        color: $font-color;
+      }
+      p {
+        font-size: 1.2em;
+        color: $font-color;
+      }
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      button {
+        background-color: $primary-color;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+    }
+  
+
+  .congratulations {
+    text-align: center;
+    font-size: 1.5em;
+    color: $secondary-color-2;
+    font-family: 'Open Sans';
+  }
+  .module-card {
+    background: $card-background;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px $shadow-color;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;}
+
+  
